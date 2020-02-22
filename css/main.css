@@ -108,9 +108,49 @@ body{
   background-color: #f2f2f2;
   font-family: 'Open Sans', sans-serif;
 }
+
+/** Globales **/
+.contenedor{
+  width: 98%;
+  margin: 0 auto;
+}
+@media only screen and (min-width: 480px){
+  .contenedor{
+    width: 95%;
+  }
+}
+@media only screen and (min-width: 768px){
+  .contenedor{
+    width: 90%;
+  }
+}
+@media only screen and (min-width: 992px){
+  .contenedor{
+    width: 90%;
+  }
+}
+.section{
+  padding: 30px 0;
+}
+.section p {
+  font-size: 1.2em;
+  text-align: center;
+}
 h2{
   font-family: 'Oswald', sans-serif;
+  font-size: 2.4em;
+  text-transform: uppercase;
+  text-align: center;
 }
+h2::after{
+  content: '';
+  margin: 0 auto;
+  background-image: url(../img/separador.png);
+  height: 30px;
+  width: 100px;
+  display: block;
+}
+
 /** Header **/
 div.hero{
   background-image: url(../img/encabezado.jpg);
@@ -186,8 +226,90 @@ h1.nombre-sitio{
   line-height: 1;
 }
 }
+/** Barra **/
+.barra{
+  background-color: #353535;
+  padding: 20px 0;
+}
+.logo{
+  width: 80%;
+  float: left;
+}
+.logo img{
+  width: 100%;
+}
+@media only screen and (min-width:768px){
+  .logo{
+    width: 33%;
+    
+  }
+}
 
+/** Navegacion prinicipal **/
+nav.navegacion-principal{
+  display: none;
+}
+nav.navegacion-principal a{
+  font-family: 'Oswald', sans-serif;
+  color: white;
+  text-decoration: none;
+  font-size: 1.3em;
+  text-transform: uppercase;
+  transition: all .3s ease;
+  width: 100%;
+  display: block;
+  text-align: center;
+  margin-bottom: 20px;
+}
+nav.navegacion-principal a:hover{
+  background-color: #fe4918;
+}
+nav.navegacion-principal a:last-child{
+  border: 2px solid #fe4918;
+  color: #fe4918;
+}
+nav.navegacion-principal a:last-child:hover{
+  color: white;
+}
+@media only screen and (min-width:768px){
+  nav.navegacion-principal{
+    width: 67%;
+    float: right;
+    text-align: right;
+    display: block;
+  }
+  nav.navegacion-principal a {
+    padding: 10px 10px;
+    display: inline-block;
+    width: auto;
+    display: inline-block;
+    text-align: center;
+    margin: 0 10px 0 0;
+  }
+}
 
+/** Menú movil **/
+div.menu-movil{
+  width: 60px;
+  display: block;
+  float: right;
+  text-align: right;
+  margin-top: 12px;
+}
+div.menu-movil:hover{
+  cursor: pointer;
+}
+@media only screen and (min-width:768px){
+  div.menu-movil{ 
+  display: none;
+  }
+}
+div.menu-movil span{
+  height: 8px;
+  margin-bottom: 6px;
+  background-color: white;
+  display: block;
+}
 
 
 /* ==========================================================================
