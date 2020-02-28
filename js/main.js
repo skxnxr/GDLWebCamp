@@ -4,6 +4,18 @@
     let regalo = document.getElementById('regalo');
     document.addEventListener('DOMContentLoaded', function(){
 
+        var map = L.map('mapa').setView([10.496262, -66.848937], 16);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        L.marker([10.496262, -66.848937]).addTo(map)
+            .bindPopup('GDLWebCamp 2020<br> Boletos ya disponibles.')
+            .openPopup();
+            // .bindTooltip('Un Tooltip')
+            // .openTooltip()
+
         //Datos usuarios
         let nombre = document.getElementById('nombre');
         let apellido = document.getElementById('apellido');
