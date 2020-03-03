@@ -194,6 +194,44 @@ ul{
 .boton:hover{
   background-color: #e33000;
 }
+/* Lettering */
+h1.nombre-sitio span {
+  position: relative;
+  text-shadow: 0 0 30px black;
+}
+@media only screen and (min-width: 992px) {
+  .char1 {
+      top: 20px; right: 20px;
+  }
+  .char2 {
+    top: 0; left: -20px;
+  }
+  .char3 {
+    top: 10px; right: 20px;
+  }
+  .char4 {
+    top: 5px; right: 10px;
+  }
+  .char5 {
+    top: 15px; right: 10px;
+  }
+  .char6 {
+    top: 5px; right: 10px;
+  }
+  .char7 {
+    top: 20px; left: 10px;
+  }
+  .char8 {
+    top: 0; left: 10px;
+  }
+  .char9 {
+    top: 10px; right: 20px;
+  }
+  .char10 {
+    top: 20px; right: 20px;
+  }
+ }
+
 /** Header **/
 div.hero{
   background-image: url(../img/encabezado.jpg);
@@ -274,6 +312,13 @@ h1.nombre-sitio{
   background-color: #353535;
   padding: 20px 0;
 }
+.fixed{
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
 .logo{
   width: 80%;
   float: left;
@@ -291,6 +336,7 @@ h1.nombre-sitio{
 /** Navegacion prinicipal **/
 nav.navegacion-principal{
   display: none;
+  width: 100%;
 }
 nav.navegacion-principal a{
   font-family: 'Oswald', sans-serif;
@@ -750,6 +796,17 @@ p.copyright {
 }
 
 /** Internas **/
+/* Conferencia */
+.galeria a {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+body.conferencia .navegacion-principal .activo{
+  border-bottom: 2px solid #fe4918;
+}
+
+
+
 /** Registro **/
 form.registro h3{
   text-align: center;

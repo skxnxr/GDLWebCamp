@@ -37,6 +37,10 @@
         let etiquetas = document.getElementById('etiquetas');
         let camisas = document.getElementById('camisa_evento');
 
+        if (document.getElementById('calcular')) {
+            
+        
+
         calcular.addEventListener('click', calcularMontos);
 
         pase_dia.addEventListener('blur', mostrarDias);
@@ -138,7 +142,7 @@
 
             }
         
-
+        }
 
 
     }); //DOM CONTENT LOADED
@@ -146,6 +150,29 @@
 
 
 $(function(){
+
+    //Lettering
+    $('.nombre-sitio').lettering();
+
+    //Menu fijo
+    let windowHeight = $(window).height();
+    let barraAltura = $('.barra').innerHeight();
+
+    $(window).scroll(function() {
+       let scroll = $(window).scrollTop();
+       if (scroll > windowHeight) {
+           $('.barra').addClass('fixed');
+           $('body').css({'margin-top': barraAltura+'px'});
+       }else{
+            $('.barra').removeClass('fixed');
+            $('body').css({'margin-top': '0px'});
+       }
+    });
+
+    //Menú responsive
+    $('.menu-movil').on('click', function() {
+        $('.navegacion-principal').slideToggle();
+    });
 
     //Programa de conferencias
     $('.programa-evento .info-curso:first').show();
@@ -161,4 +188,30 @@ $(function(){
        return false;
     });
     
+    //Animaciones para los números
+    let resumenLista = jQuery('.resumen-evento');
+    if (resumenLista.length > 0) {
+        $('.resumen-evento').waypoint(function(){
+            $('.resumen-evento li:nth-child(1) p').animateNumber({number: 6}, 1200);
+            $('.resumen-evento li:nth-child(2) p').animateNumber({number: 15}, 1200);
+            $('.resumen-evento li:nth-child(3) p').animateNumber({number: 3}, 1400);
+            $('.resumen-evento li:nth-child(4) p').animateNumber({number: 9}, 1500);
+
+        }, {
+            offset: '60%'
+        });
+    }
+
+    
+    //Cuenta regresiva
+    $('.cuenta-regresiva').countdown('2020/04/10 09:00:00', function(event) {
+        $('#dias').html(event.strftime('%D'));
+        $('#horas').html(event.strftime('%H'));
+        $('#minutos').html(event.strftime('%M'));
+        $('#segundos').html(event.strftime('%S'));
+    });
+
+
+
+
 });
